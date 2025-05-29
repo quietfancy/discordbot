@@ -21,6 +21,7 @@ class PurgeConfirmView(ui.View):
         self.confirmed = True
 
         await interaction.response.defer()
+        
         await self.clear_view(interaction)
         await self.ctx.send(f"🧹 Starting purge of messages from {self.target_user.mention}...", delete_after=5)
 
